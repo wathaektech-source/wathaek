@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512">
+  <defs>
+    <mask id="cutA" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"/><path d="M61 38 H79" stroke="#000" stroke-width="18"/></mask>
+    <mask id="cutB" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"/><path d="M39 82 H57" stroke="#000" stroke-width="18"/></mask>
+  </defs>
+  <g fill="none" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#cutB)" stroke="#1E6BFF">
+      <path d="M58 38 H90 L100 48 V100 Q100 110 90 110 H58 Q48 110 48 100 V48 Q48 38 58 38 Z"/>
+      <path d="M90 38 V48 H100"/>
+    </g>
+    <g mask="url(#cutA)" stroke="#22C7EE">
+      <path d="M28 10 H60 L70 20 V72 Q70 82 60 82 H28 Q18 82 18 72 V20 Q18 10 28 10 Z"/>
+      <path d="M60 10 V20 H70"/>
+    </g>
+  </g>
+</svg>
