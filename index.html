@@ -789,31 +789,13 @@
   </div>
 </footer>
 
-<!-- ================= SMART ASSISTANT (always on screen) ================= -->
-<div class="assistant" id="assistant">
-  <section class="as-panel" id="asPanel" role="dialog" aria-label="مساعد وثائق">
-    <header class="as-head">
-      <span class="as-avatar"><svg><use href="#mark"/></svg><i class="as-online"></i></span>
-      <span class="as-title"><b>مساعد وثائق <svg><use href="#i-ai"/></svg></b><small>متصل الآن · ردود فورية</small></span>
-      <button class="as-min" type="button" id="asMin" aria-label="تصغير المساعد"><svg><use href="#i-chevron"/></svg></button>
-    </header>
-    <div class="as-body" id="asBody" aria-live="polite"></div>
-    <div class="as-chips" id="asChips"></div>
-    <form class="as-input" id="asForm" autocomplete="off">
-      <input id="asText" type="text" placeholder="اكتب سؤالك هنا…" aria-label="اكتب سؤالك">
-      <button type="submit" aria-label="إرسال"><svg><use href="#i-send"/></svg></button>
-    </form>
-  </section>
-  <button class="as-teaser" id="asTeaser" type="button" hidden>
-    <span class="as-teaser-dot"></span>مرحبًا 👋 كيف أقدر أساعدك اليوم؟
-  </button>
-  <button class="as-launcher" id="asLauncher" type="button" aria-label="فتح المساعد" aria-expanded="false" aria-controls="asPanel">
-    <svg class="ico-open"><use href="#i-ai"/></svg>
-    <svg class="ico-close"><use href="#i-close"/></svg>
-  </button>
-</div>
+<!-- ================= FLOATING AI BUTTON (always on screen) ================= -->
+<a class="ai-fab" href="#ai" aria-label="الذكاء الاصطناعي">
+  <svg aria-hidden="true"><use href="#i-ai"/></svg>
+  <span class="ai-fab-ar" lang="ar">الذكاء الاصطناعي</span>
+  <span class="ai-fab-en" lang="en">AI</span>
+</a>
 
 <script src="script.js"></script>
-<script src="assistant.js"></script>
 </body>
 </html>
