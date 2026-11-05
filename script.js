@@ -13,6 +13,26 @@
   const root = document.documentElement;
   root.classList.add('js');
 
+  // Light / dark theme switch (default light; the choice is remembered on this device)
+  const themeBtn = document.getElementById('themeBtn');
+  const metaScheme = document.querySelector('meta[name="color-scheme"]');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const applyTheme = (dark) => {
+    if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+    if (metaScheme) metaScheme.content = dark ? 'dark' : 'only light';
+    if (metaTheme) metaTheme.content = dark ? '#0A1120' : '#1E6BFF';
+    if (themeBtn) {
+      themeBtn.setAttribute('aria-pressed', String(dark));
+      themeBtn.setAttribute('aria-label', dark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن');
+    }
+  };
+  applyTheme(root.dataset.theme === 'dark');
+  themeBtn?.addEventListener('click', () => {
+    const dark = root.dataset.theme !== 'dark';
+    applyTheme(dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  });
+
   // Mobile menu
   const header = document.querySelector('.site-header');
   const menuBtn = document.getElementById('menuBtn');

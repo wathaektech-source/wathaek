@@ -10,6 +10,8 @@
   <meta name="application-name" content="وثائق المتكاملة">
   <meta name="theme-color" content="#1E6BFF">
   <meta name="color-scheme" content="only light">
+  <!-- Apply a saved dark theme before the page paints (default is light) -->
+  <script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.dataset.theme='dark';document.querySelector('meta[name="color-scheme"]').content='dark';document.querySelector('meta[name="theme-color"]').content='#0A1120'}}catch(e){}</script>
 
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -38,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 
   <script type="application/ld+json">
   {
@@ -164,6 +166,8 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 L10 17 L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12 H5 M11 6 L5 12 L11 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7 H20 M4 12 H20 M4 17 H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5 V4.5 M12 19.5 V21.5 M2.5 12 H4.5 M19.5 12 H21.5 M5.3 5.3 L6.7 6.7 M17.3 17.3 L18.7 18.7 M5.3 18.7 L6.7 17.3 M17.3 6.7 L18.7 5.3"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5 A8.5 8.5 0 1 1 9.5 3.5 A7 7 0 0 0 20.5 14.5 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6 L18 18 M18 6 L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <!-- Social icons -->
     <symbol id="s-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
@@ -205,6 +209,10 @@
     </nav>
 
     <a class="btn btn-primary header-cta" href="#contact">اطلب استشارتك</a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="تفعيل الوضع الداكن" aria-pressed="false">
+      <svg class="ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
     <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
       <svg class="ico-open"><use href="#i-menu"/></svg>
       <svg class="ico-close"><use href="#i-close"/></svg>
@@ -797,6 +805,6 @@
   <span class="ai-fab-en" lang="en">AI</span>
 </a>
 
-<script src="script.js"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
