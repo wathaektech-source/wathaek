@@ -1,0 +1,45 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Plain static site (HTML/CSS/JS), no framework build step.
+services:
+  - type: web
+    name: wathaek-website
+    runtime: static
+    # Copy only the public site files into ./public so repo files
+    # (render.yaml, .gitignore, .DS_Store, etc.) are never served.
+    buildCommand: >-
+      rm -rf public && mkdir -p public &&
+      cp -R index.html styles.css script.js assistant.js favicon.ico
+      robots.txt sitemap.xml site.webmanifest assets public/
+    staticPublishPath: ./public
+    pullRequestPreviewsEnabled: false
+
+    headers:
+      # Security headers for every response
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      # Images/icons change rarely — cache for 7 days
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /favicon.ico
+        name: Cache-Control
+        value: public, max-age=604800
+      # Correct MIME type for the web manifest
+      - path: /site.webmanifest
+        name: Content-Type
+        value: application/manifest+json
+
+    # Custom domain (matches canonical URL in index.html).
+    # Render adds www.wathaek.tech automatically and redirects it to the apex.
+    domains:
+      - wathaek.tech
