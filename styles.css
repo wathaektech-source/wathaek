@@ -24,7 +24,8 @@
   --container: 1200px;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  color-scheme: light;
+  /* "only light" tells browsers with forced/auto dark mode (Samsung Internet, Chrome Android) not to recolor the site */
+  color-scheme: only light;
 }
 
 *,
