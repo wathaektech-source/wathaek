@@ -6,10 +6,10 @@ services:
     runtime: static
     # Copy only the public site files into ./public so repo files
     # (render.yaml, .gitignore, .DS_Store, etc.) are never served.
+    # Copies by file type, so adding/removing a page or script needs no change here.
     buildCommand: >-
       rm -rf public && mkdir -p public &&
-      cp -R index.html styles.css script.js assistant.js favicon.ico
-      robots.txt sitemap.xml site.webmanifest assets public/
+      cp -R *.html *.css *.js *.ico *.txt *.xml *.webmanifest assets public/
     staticPublishPath: ./public
     pullRequestPreviewsEnabled: false
 
