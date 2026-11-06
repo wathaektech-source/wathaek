@@ -4,10 +4,10 @@
 
   // ⬇️ Social accounts — paste each profile link here
   const SOCIAL = {
-    facebook: '',
-    x: '',
+    facebook: 'https://www.facebook.com/profile.php?id=61595820175379',
+    x: 'https://x.com/WathaiqIT',
     snapchat: '',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/wathaek-tech-592879449/',
   };
 
   const root = document.documentElement;

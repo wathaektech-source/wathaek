@@ -1,6 +1,6 @@
 /* =========================================================
    Wathaek — website styles
-   Brand: Sky Cyan #22C7EE · Bright Blue #1E6BFF · Alexandria
+   Brand: Sky Cyan #22C7EE · Bright Blue #1E6BFF · Cairo
    ========================================================= */
 
 :root {
@@ -81,7 +81,7 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--body);
-  font-family: "Alexandria", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Cairo", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.9;
@@ -460,6 +460,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .footer-contact { display: grid; gap: 10px; }
 .footer-contact a { display: inline-flex; align-items: center; gap: 10px; }
 .footer-contact svg { width: 20px; height: 20px; color: var(--blue); }
+.footer-cr { display: inline-flex; align-items: center; gap: 10px; margin: 0; color: var(--head); font-weight: 500; }
 .footer-bottom { margin-top: 40px; padding: 20px 0 28px; border-top: 1px solid var(--line); font-size: .92rem; color: var(--muted); text-align: center; }
 
 
@@ -614,7 +615,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .ai-fab-en { display: none; }
 html[lang^="en"] .ai-fab-ar { display: none; }
 html[lang^="en"] .ai-fab-en { display: inline; }
-@media (max-width: 640px) { .ai-fab { inset-inline-end: 14px; bottom: 14px; } }
+@media (max-width: 640px) {
+  .ai-fab { inset-inline-end: 14px; bottom: 14px; }
+  /* room so the last footer line can scroll above the floating button */
+  .footer-bottom { padding-bottom: 96px; }
+}
 
 /* Chat avatar + message bubbles (used by the AI demo section) */
 .as-avatar { position: relative; width: 44px; height: 44px; border-radius: 14px; background: var(--surface); display: grid; place-items: center; flex: none; }
